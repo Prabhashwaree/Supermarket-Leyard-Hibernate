@@ -82,17 +82,4 @@ public class Customer {
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "customerId='" + customerId + '\'' +
-                ", title='" + title + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", province='" + province + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                '}';
-    }
 }

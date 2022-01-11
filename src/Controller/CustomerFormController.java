@@ -166,7 +166,7 @@ public class CustomerFormController {
 
     }
     public void initialize() {
-       // Validate();
+        Validate();
             colId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
             colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
             colName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -177,7 +177,7 @@ public class CustomerFormController {
 
         try {
             setCustomersToTable();
-            /*getLastCustomer();*/
+            getLastCustomer();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -208,11 +208,11 @@ public class CustomerFormController {
     private void setCustomersToTable() throws SQLException, ClassNotFoundException {
         tblCustomer.setItems(customerBO.getAllCustomer());
     }
-   /* private String getLastCustomer(){
+    private String getLastCustomer(){
         List<CustomerTm> list = new ArrayList<>(tblCustomer.getItems());
         Collections.sort(list);
         return list.get(list.size() -1).getCustomerId();
-    }*/
+    }
 
 
     public void mouseClickOnAction(MouseEvent mouseEvent) {

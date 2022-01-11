@@ -16,39 +16,27 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean add(Customer c) throws SQLException, ClassNotFoundException {
-        /*return CrudUtil.executeUpdate("INSERT INTO Customer VALUES(?,?,?,?,?,?,?)",c.getCustomerId(),c.getTitle(),c.getName()
-                ,c.getAddress(),c.getCity(),c.getProvince(),c.getPostalCode());*/
-        Session session= FactoryConfiguration.getInstance().getSession();
+        return CrudUtil.executeUpdate("INSERT INTO Customer VALUES(?,?,?,?,?,?,?)",c.getCustomerId(),c.getTitle(),c.getName()
+                ,c.getAddress(),c.getCity(),c.getProvince(),c.getPostalCode());
+        /*Session session= FactoryConfiguration.getInstance().getSession();
         Transaction transaction=session.beginTransaction();
         session.save(c);
         transaction.commit();
         session.close();
-        return true;
+        return true;*/
 
     }
 
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
-        /*return CrudUtil.executeUpdate("DELETE FROM Customer WHERE CustId=?", id);*/
+        return CrudUtil.executeUpdate("DELETE FROM Customer WHERE CustId=?", id);
 
-        Session session=FactoryConfiguration.getInstance().getSession();
-        Transaction transaction=session.beginTransaction();
-        session.delete(id);
-        transaction.commit();
-        session.close();
-        return true;
 
     }
 
     @Override
     public boolean update(Customer c) throws SQLException, ClassNotFoundException {
-        /*return CrudUtil.executeUpdate("UPDATE Customer SET CustTitle=?, CustName=?, CustAddress=? , City=?, Povince=?, PostCode=?WHERE CustID=?",c.getTitle(),c.getName(),c.getAddress(),c.getCity(),c.getProvince(),c.getPostalCode(),c.getCustomerId());*/
-        Session session=FactoryConfiguration.getInstance().getSession();
-        Transaction transaction=session.beginTransaction();
-        session.update(c);
-        transaction.commit();
-        session.close();
-        return true;
+        return CrudUtil.executeUpdate("UPDATE Customer SET CustTitle=?, CustName=?, CustAddress=? , City=?, Povince=?, PostCode=?WHERE CustID=?",c.getTitle(),c.getName(),c.getAddress(),c.getCity(),c.getProvince(),c.getPostalCode(),c.getCustomerId());
     }
 
     @Override
